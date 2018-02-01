@@ -1,4 +1,14 @@
-# wu2018
+# WU2018
+
+Automated testing with PHPUnit and CircleCI 
+
+## Prerequisites
+- Github account
+- Git Bash https://git-scm.com/downloads
+- Docker https://docs.docker.com/install/
+- Editor, one of 
+  - VSCode https://code.visualstudio.com/ or 
+  - Sublime https://www.sublimetext.com/
 
 ## Running project
 ```bash
