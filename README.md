@@ -9,6 +9,8 @@ Automated testing with PHPUnit and CircleCI
 - Editor, one of 
   - VSCode https://code.visualstudio.com/ or 
   - Sublime https://www.sublimetext.com/
+  
+  Read this https://phpunit.de/getting-started-with-phpunit.html
 
 ## Running project
 ```bash
