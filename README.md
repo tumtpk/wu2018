@@ -1,5 +1,7 @@
 # WU2018 - Continuous Deployment 
 
+https://docs.google.com/presentation/d/128zwUq90lWAtYrtqsvRy-qQiWKgrANjtmesutkvDiT4/edit?usp=sharing
+
 ## Prerequisites
 - Github account
 - Git Bash https://git-scm.com/downloads
