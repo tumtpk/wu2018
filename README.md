@@ -1,6 +1,4 @@
-# WU2018
-
-Automated testing with PHPUnit and CircleCI 
+# WU2018 - Continuous Deployment 
 
 ## Prerequisites
 - Github account
@@ -9,6 +7,8 @@ Automated testing with PHPUnit and CircleCI
 - Editor, one of 
   - VSCode https://code.visualstudio.com/ or 
   - Sublime https://www.sublimetext.com/
+- CircleCI account
+- AWS account
   
 Read this https://phpunit.de/getting-started-with-phpunit.html
 
