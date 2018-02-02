@@ -24,7 +24,7 @@
             let data = {
                 content: textContent
             }
-            let response = await fetch('transform.php', {
+            let response = await fetch('ai.php', {
                 method: 'post',
                 body: JSON.stringify(data)
             })
