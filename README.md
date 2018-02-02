@@ -9,8 +9,8 @@ https://docs.google.com/presentation/d/128zwUq90lWAtYrtqsvRy-qQiWKgrANjtmesutkvD
 - Editor, one of 
   - VSCode https://code.visualstudio.com/ or 
   - Sublime https://www.sublimetext.com/
-- CircleCI account
-- AWS account
+- CircleCI account https://circleci.com/
+- AWS account https://aws.amazon.com/free
   
 Read this https://phpunit.de/getting-started-with-phpunit.html
 
