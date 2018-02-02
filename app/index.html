@@ -11,7 +11,9 @@
             WU2018
         </h2>
         <textarea id="text" class="textarea" placeholder="What's on your mind?" rows="10"></textarea>
-        <a class="button is-danger" onclick="javascript:transform()">Post!</a>
+        <div class="control">
+            <a class="button is-danger" onclick="javascript:transform()">Post!</a>
+        </div>
     </div>
   </div>
 </section>
@@ -24,7 +26,7 @@
             let data = {
                 content: textContent
             }
-            let response = await fetch('ai.php', {
+            let response = await fetch('api.php', {
                 method: 'post',
                 body: JSON.stringify(data)
             })

@@ -1,5 +1,9 @@
 <?php
 
-$raw_data = file_get_contents('php://input');
-$data = json_decode($raw_data);
-var_dump($data);
+class AI
+{
+    public static function process($data)
+    {
+        return $data;
+    }
+}

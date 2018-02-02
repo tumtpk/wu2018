@@ -18,7 +18,7 @@ Read this https://phpunit.de/getting-started-with-phpunit.html
 ```bash
 docker-compose up --build
 ```
-Access http://localhost:8080 to see example page
+Access http://localhost:8000 to see example page
 
 ## Get into the webapp container
 ```bash
