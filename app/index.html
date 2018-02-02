@@ -1,6 +1,54 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css"/>
+<!doctype html>
 
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css"/>
+<style>
+.spacer-top {
+    margin-top: 1em;
+}
+#gender {
+    background: white;
+    color: #23d160;
+    font-size: 100px;
+    line-height: 1.5em;
+    padding: 20px;
+    text-align: center;
+    min-height: 190px;
+}
+#sentiment {
+    background: white;
+    color: #209cee;
+    font-size: 100px;
+    line-height: 1.5em;
+    padding: 20px;
+    text-align: center;
+    min-height: 190px;
+}
+#rude-words {
+    background: white;
+    color: #333;
+    font-size: 20px;
+    line-height: 1.5em;
+    padding: 20px;
+    text-align: center;
+    min-height: 190px;
+}
+#languages {
+    background: white;
+    color: #333;
+    font-size: 20px;
+    line-height: 1.5em;
+    padding: 70px 0;
+    text-align: center;
+    min-height: 190px;
+    min-height: 190px;
+}
+</style>
+</head>
+<body>
 <section class="hero is-primary is-medium">
   <div class="hero-body">
     <div class="container">
@@ -11,8 +59,31 @@
             WU2018
         </h2>
         <textarea id="text" class="textarea" placeholder="What's on your mind?" rows="10"></textarea>
-        <div class="control">
-            <a class="button is-danger" onclick="javascript:transform()">Post!</a>
+        <div class="control spacer-top">
+            <a class="button is-danger" onclick="javascript:transform()">Analyze!</a>
+        </div>
+
+        <div class="columns spacer-top">
+            <div class="column">
+                <div id="gender">
+                    <!-- <i class="fas fa-female"></i> -->
+                </div>
+            </div>
+            <div class="column">
+                <div id="sentiment">
+                    <!-- <i class="far fa-smile"></i> -->
+                </div>
+            </div>
+            <div class="column">
+                <div id="rude-words">
+                    <!-- กาก, เหี้ย, แย่, ควย -->
+                </div>
+            </div>
+            <div class="column">
+                <div id="languages">
+                    <!-- <img src="images/th.png" width="100"> -->
+                </div>
+            </div>
         </div>
     </div>
   </div>
@@ -22,7 +93,6 @@
     async function transform() {
         try {
             let textContent = document.getElementById("text").value
-            console.log(textContent)
             let data = {
                 content: textContent
             }
@@ -31,10 +101,40 @@
                 body: JSON.stringify(data)
             })
             let result = await response.json()
-            console.log(result)
+            switch (result.gender) {
+                case 'Male':
+                    document.getElementById('gender').innerHTML = '<i class="fas fa-male"></i>'
+                    break
+                case 'Female':
+                    document.getElementById('gender').innerHTML = '<i class="fas fa-female"></i>'
+                    break
+                case 'Unknown':
+                    document.getElementById('gender').innerHTML = '<i class="fas fa-question"></i>'
+                    break
+            }
+            switch (result.sentiment) {
+                case 'Positive':
+                    document.getElementById('sentiment').innerHTML = '<i class="far fa-smile"></i>'
+                    break
+                case 'Neutral':
+                    document.getElementById('sentiment').innerHTML = '<i class="far fa-meh"></i>'
+                    break
+                case 'Negative':
+                    document.getElementById('sentiment').innerHTML = '<i class="far fa-poo"></i>'
+                    break
+            }
+            document.getElementById('rude-words').innerHTML = result.rude_words.join(', ')
+            lang_icon = ''
+            console.log(result.languages.includes('EN'))
+            if (result.languages.includes('TH'))
+                lang_icon = '<img src="images/th.png" width="50">'
+            if (result.languages.includes('EN'))
+                lang_icon = lang_icon + '<img src="images/en.png" width="50">'
+            document.getElementById('languages').innerHTML = lang_icon
         } catch (error) {
-            console.error(error);
+            console.error(error)
         }
         // do something
     }
 </script>
+</body>

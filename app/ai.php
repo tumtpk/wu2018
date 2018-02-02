@@ -10,6 +10,7 @@ class AI
             'rude_words' => self::getRudeWords($text),
             'languages' => self::getLanguages($text),
         ];
+        return $result;
     }
 
     /**
@@ -41,6 +42,6 @@ class AI
      */
     public static function getLanguages($text)
     {
-        return ['TH'];
+        return ['TH', 'EN'];
     }
 }
