@@ -18,7 +18,7 @@ class AI
      */
     public static function getGender($text)
     {
-        $male = ["ผม", "ครับ"];
+        $male = ["ผม", "ครับ", "ว้าย"];
         $female = ["ฉัน", "คะ"];
 
         for ($i=0; $i < sizeof($male); $i++) {
@@ -45,15 +45,15 @@ class AI
         $positive = ["สวย", "น่ารัก", "ดูดี", "สมบูรณ์แบบ", "beautiful", "cute", "perfect"];
         $negative = ["ไม่น่ารัก", "Unlovely"];
 
-        for ($i=0; $i < sizeof($positive); $i++) {
-            if (stripos($text, $positive[$i]) !== false) {
-                return 'Positive';
-            }
-        }
-
         for ($i=0; $i < sizeof($negative); $i++) {
             if (stripos($text, $negative[$i]) !== false) {
                 return 'Negative';
+            }
+        }
+
+        for ($i=0; $i < sizeof($positive); $i++) {
+            if (stripos($text, $positive[$i]) !== false) {
+                return 'Positive';
             }
         }
 
