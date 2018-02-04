@@ -46,6 +46,10 @@
     min-height: 190px;
     min-height: 190px;
 }
+.hero.is-primary {
+    background-color: #18aae4;
+    color: #fff;
+}
 </style>
 </head>
 <body>
@@ -103,10 +107,10 @@
             let result = await response.json()
             switch (result.gender) {
                 case 'Male':
-                    document.getElementById('gender').innerHTML = '<i class="fas fa-male"></i>'
+                    document.getElementById('gender').innerHTML = '<i class="fas fa-chess-king"></i>'
                     break
                 case 'Female':
-                    document.getElementById('gender').innerHTML = '<i class="fas fa-female"></i>'
+                    document.getElementById('gender').innerHTML = '<i class="fas fa-chess-queen"></i>'
                     break
                 case 'Unknown':
                     document.getElementById('gender').innerHTML = '<i class="fas fa-question"></i>'
