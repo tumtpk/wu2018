@@ -58,6 +58,7 @@ final class AITest extends TestCase
         $result = AI::getRudeWords('มึงไม่น่ารักกู');
         $expected_result = ['กู', 'มึง'];
         $this->assertTrue(count(array_diff_key($result, $expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($expected_result, $result)) === 0);
     }
 
     public function testLanguages_English(): void
@@ -79,6 +80,7 @@ final class AITest extends TestCase
         $result = AI::getLanguages('Hello สวัสดี');
         $expected_result = ['EN', 'TH'];
         $this->assertTrue(count(array_diff_key($result, $expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($expected_result, $result)) === 0);
     }
 
 }
